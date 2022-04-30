@@ -1,0 +1,8 @@
+{
+  "name": "entregas",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:marcelocamacho/entregas.git",
+  "author": "Marcelo S. Camacho <marcelocamacho.ufpa@gmail.com>",
+  "license": "MIT"
+}
