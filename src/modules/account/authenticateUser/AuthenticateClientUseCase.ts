@@ -12,11 +12,11 @@ export class AuthenticateClientUseCase {
     const existClient = await prisma.clients.findFirst({
       where:{
         username
-      }
+      },
     });
 
     if(!existClient){
-      throw new Error("Username or password invalid!")
+      throw new Error("Username or password invalid!");
     };
 
     const passwordMatch = await compare(password,existClient.password);

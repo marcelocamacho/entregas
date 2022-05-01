@@ -6,7 +6,7 @@
   "author": "Marcelo S. Camacho <marcelocamacho.ufpa@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node-dev --exit-child --respawn --no-notify --transpile-only --ignore-watch node_modules  src/server.ts"
+    "dev": "ts-node-dev --exit-child --debug --transpile-only --ignore-watch node_modules  src/server.ts"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
@@ -20,6 +20,7 @@
     "@prisma/client": "^3.13.0",
     "bcrypt": "^5.0.1",
     "express": "^4.18.1",
+    "express-async-error": "^0.0.2",
     "jsonwebtoken": "^8.5.1"
   }
 }

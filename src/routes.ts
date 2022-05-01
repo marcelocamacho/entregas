@@ -4,12 +4,6 @@ import { CreateClientController } from './modules/clients/useCases/createClient/
 
 const routes = Router();
 
-routes.get("/",(request,response)=>{
-  return response.json({
-    message: "OK"
-  })
-})
-
 const createClientController = new CreateClientController();
 routes.post("/client/", createClientController.handle);
 
