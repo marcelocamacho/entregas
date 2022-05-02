@@ -4,17 +4,17 @@ import { CreateClientController } from './modules/clients/useCases/createClient/
 
 const routes = Router();
 
-const resolver = (handlerFn:Handler) => {
+/*const resolver = (handlerFn:Handler) => {
   return (req:Request, res:Response, next:NextFunction) => {
     return Promise.resolve(handlerFn(req,res,next))
     .catch(e => next(e))
   }
 }
-
+*/
 const createClientController = new CreateClientController();
-routes.post("/client", resolver(createClientController.handle));
+routes.post("/client", createClientController.handle);
 
 const autheticateClientController = new AuthenticateClientController();
-routes.post("/authenticate", resolver(autheticateClientController.handle));
+routes.post("/authenticate", autheticateClientController.handle);
 
 export {routes}
