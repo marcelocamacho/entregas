@@ -9,6 +9,7 @@ interface IAuthenticateClient{
 
 export class AuthenticateClientUseCase {
   async execute({username, password}:IAuthenticateClient){
+
     const existClient = await prisma.clients.findFirst({
       where:{
         username
@@ -16,13 +17,13 @@ export class AuthenticateClientUseCase {
     });
 
     if(!existClient){
-      throw new Error("Username or password invalid!");
+     throw new Error("Invalid email or password!");
     };
 
-    const passwordMatch = await compare(password,existClient.password);
+    const passwordMatch = await compare(password, existClient.password);
     
     if(!passwordMatch){
-      throw new Error("Username or password invalid!");
+      throw new Error("Invalid email or password!");
     }
 
     const token = sign({username},"15e29073b36ace1d7197245155f745a4",
